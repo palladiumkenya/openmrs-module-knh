@@ -27,30 +27,43 @@
 
     <!-- Wraps KnhService methods in DB transactions and OpenMRS interceptors,
     which set audit info like dateCreated, changedBy, etc.-->
-    <bean id="knh.KnhService"
-            class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
-        <property name="transactionManager">
-            <ref bean="transactionManager" />
-        </property>
-        <property name="target">
-            <bean class="org.openmrs.module.knh.api.impl.KnhServiceImpl">
-                <property name="dao" >
-                <bean class="org.openmrs.module.knh.api.dao.KnhDao">
-                    <property name="sessionFactory">
-                        <ref bean="sessionFactory" />
+<!--
+    <bean id="knh.program" class="org.openmrs.module.kenyacore.program.ProgramDescriptor">
+        <property name="targetUuid" value="46f29120-ed18-11ea-adc1-0242ac120002" />
+        <property name="eligibilityCalculation" value="org.openmrs.module.kenyaemr.calculation.library.hiv.EligibleForHivProgramCalculation" />
 
-                    </property>
-                </bean>
-                </property>
-            </bean>
+        &lt;!&ndash;<property name="defaultEnrollmentForm" ref="kenyakeypop.form.kpContact"  />
+        <property name="defaultCompletionForm" ref="kenyakeypop.form.completion" />&ndash;&gt;
+        <property name="patientForms">
+            <set>
+                <ref bean="knh.form.inpatientCare" />
+            </set>
         </property>
-        <property name="preInterceptors">
-            <ref bean="serviceInterceptors" />
+        <property name="visitForms">
+            <set>
+
+                <ref bean="knh.form.inpatientCare" />
+
+            </set>
         </property>
-        <property name="transactionAttributeSource">
-            <ref bean="transactionAttributeSource" />
+
+        &lt;!&ndash;<property name="fragments">
+            <map>
+                <entry key="enrollment-summary" value="knh:program/knhs/knhEnrollmentSummary"/>
+                <entry key="care-panel" value="knh:program/knhs/knhCarePanel"/>
+                <entry key="completion-summary" value="knh:program/knhs/knhCompletionSummary"/>
+            </map>
+        </property>&ndash;&gt;
+        <property name="order" value="590" />
+        <property name="reports">
+            <set>
+
+            </set>
         </property>
-    </bean>
+
+    </bean>-->
+
+
 
     <!-- Adds KnhService to OpenMRS context so it can be accessed
     calling Context.getService(KnhService.class) -->
@@ -62,4 +75,57 @@
             </list>
         </property>
     </bean>
+    <bean id="knh.KnhService"
+          class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+        <property name="transactionManager">
+            <ref bean="transactionManager" />
+        </property>
+        <property name="target">
+            <bean class="org.openmrs.module.knh.api.impl.KnhServiceImpl">
+                <property name="dao" >
+                    <bean class="org.openmrs.module.knh.api.dao.KnhDao">
+                        <property name="sessionFactory">
+                            <ref bean="sessionFactory" />
+
+                        </property>
+                    </bean>
+                </property>
+            </bean>
+        </property>
+        <property name="preInterceptors">
+            <ref bean="serviceInterceptors" />
+        </property>
+        <property name="transactionAttributeSource">
+            <ref bean="transactionAttributeSource" />
+        </property>
+    </bean>
+
+
+    <bean id="knhtesting.config.form" class="org.openmrs.module.kenyacore.form.FormConfiguration">
+        <property name="commonVisitForms">
+            <set>
+                <ref bean="kenyaemr_knh_testing.common.form.inpatientCare" />
+            </set>
+        </property>
+    </bean>
+
+    <!-- ===================== Forms ===================== -->
+
+    <!--   inpatient form -->
+    <bean id="kenyaemr_knh_testing.common.form.inpatientCare" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+        <property name="targetUuid" value="34a5224e-ed4a-11ea-adc1-0242ac120002" />
+        <property name="apps">
+            <set>
+                <ref bean="kenyaemr.app.registration" />
+                <ref bean="kenyaemr.app.clinician" />
+                <ref bean="kenyaemr.app.chart" />
+            </set>
+        </property>
+        <property name="icon" value="kenyaui:forms/generic.png" />
+        <property name="htmlform" value="knh:inpatientCare.html" />
+
+    </bean>
+
+
+
 </beans>
