@@ -104,7 +104,7 @@
     <bean id="knhtesting.config.form" class="org.openmrs.module.kenyacore.form.FormConfiguration">
         <property name="commonVisitForms">
             <set>
-                <ref bean="kenyaemr_knh_testing.common.form.inpatientCare" />
+                <ref bean="kenyaemr_knh_testing.common.form.inpatientCareForm" />
             </set>
         </property>
     </bean>
@@ -112,7 +112,7 @@
     <!-- ===================== Forms ===================== -->
 
     <!--   inpatient form -->
-    <bean id="kenyaemr_knh_testing.common.form.inpatientCare" class="org.openmrs.module.kenyacore.form.FormDescriptor">
+    <bean id="kenyaemr_knh_testing.common.form.inpatientCareForm" class="org.openmrs.module.kenyacore.form.FormDescriptor">
         <property name="targetUuid" value="34a5224e-ed4a-11ea-adc1-0242ac120002" />
         <property name="apps">
             <set>
