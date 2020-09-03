@@ -68,7 +68,7 @@ public class KnhMetadata extends AbstractMetadataBundle {
 		    _Form.KNH_INPATIENT_FORM));
 		
 		// Installing identifiers
-		install(patientIdentifierType("KNH Number", "Unique Number assigned by KNH", null, null, null,
+		install(patientIdentifierType("KNH Patient Number", "Unique Number assigned by KNH", null, null, null,
 		    PatientIdentifierType.LocationBehavior.NOT_USED, false, _PatientIdentifierType.KNH_PATIENT_NUMBER));
 		
 		// Installing program
