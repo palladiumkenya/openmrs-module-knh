@@ -128,23 +128,4 @@
 
     <!-- ===================== Reports ===================== -->
 
-    <bean id="knh.config.report" class="org.openmrs.module.kenyacore.report.ReportConfiguration">
-        <property name="commonReports">
-            <set>
-                <ref bean="knh.common.report.weeklysurge"/>
-            </set>
-        </property>
-    </bean>
-
-    <bean id="knh.common.report.weeklysurge" class="org.openmrs.module.kenyacore.report.IndicatorReportDescriptor">
-        <property name="targetUuid" value="b76fd8c5-a721-44ee-8fc4-20eb746c33bc" />
-        <property name="name" value="KNH Weekly LEAP (Surge) Report" />
-        <property name="description" value="A weekly report on LEAP (Surge) indicators" />
-        <property name="apps">
-            <set>
-                <ref bean="kenyaemr.app.reports" />
-            </set></property>
-        <property name="template" value="kenyaemr:moh731.xls" />
-    </bean>
-
 </beans>

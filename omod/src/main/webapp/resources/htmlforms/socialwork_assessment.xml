@@ -1,0 +1,109 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Patient Particulars</legend>
+			<table>
+				<tr>
+					<td>Nationality:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" required="true" /></td>
+				</tr>
+				<tr>
+					<td>Residence:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>District of Birth:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Division:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Location:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Sub location:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Chief:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Assistant Chief:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Type of patient:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Accompanied by:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Address:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Patient Tel:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Nearest Government Hospital:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Treatment Supporter Tel:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+	</div>
+	<fieldset>
+		<legend>Historical and Presenting Problems</legend>
+		<table>
+			<tr>
+				<td>Presenting problems and diagnosis:</td>
+				<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+			</tr>
+			<tr>
+				<td>Personal History:</td>
+				<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+			</tr>
+			<tr>
+				<td>Family socio-economic History:</td>
+				<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+			</tr>
+			<tr>
+				<td>Problem identified/ Defination:</td>
+				<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+			</tr>
+			<tr>
+				<td>Plan of action/Recommendation:</td>
+				<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+			</tr>
+		</table>
+	</fieldset>
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>

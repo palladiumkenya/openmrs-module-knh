@@ -1,0 +1,53 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Lab Sample Collection</legend>
+			<table>
+				<tr>
+					<td>Sample taken:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Sample collected or presented to the lab:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date sample collected:</td>
+					<td><obs conceptId="162078AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"  /></td>
+				</tr>
+				<tr>
+					<td>If sample not taken, specify reason:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+				</tr>
+				<tr>
+					<td>Sample rejected:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Reason why sample was rejected:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+				</tr>
+			</table>
+		</fieldset>
+	</div>
+
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>
