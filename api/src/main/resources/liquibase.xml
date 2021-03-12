@@ -15,7 +15,7 @@
  
  	<!-- Uncomment the changeset below if you want to make the Item class persistable, see also Item and KnhDaoTest -->
  	<!--
-	<changeSet id="knh-2016-08-02-12-21" author="raff">
+	<changeSet id="appointments-2016-08-02-12-21" author="raff">
 		<preConditions onFail="MARK_RAN">
 			<not><tableExists tableName="knh_item"/></not>
 		</preConditions>
