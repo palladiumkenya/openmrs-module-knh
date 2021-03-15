@@ -1,0 +1,405 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Client Information</legend>
+			<table>
+				<tr>
+					<td>Date of discharge:</td>
+					<td><obs conceptId="1641AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Discharge diagnosis:</td>
+					<td><obs conceptId="161011AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="60" /></td>
+				</tr>
+				<tr>
+					<td>Date of death:</td>
+					<td><obs conceptId="1543AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Treatment Status at Discharge</td>
+					<td>
+						<obs class="action-taken"
+							 conceptId="1255AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							 answerConceptIds="164513AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1259AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,981AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1258AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1107AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,1260AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA,5622AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+							 answerLabels="SWITCH TO SECOND LINE,SWITCHED REGIMEN,CHANGED DOSE,SUBSTITUTED DRUG,NONE,STOP,OTHER"
+							 style="dropdown"
+						/>
+					</td>
+
+
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Vital Signs</legend>
+			<table>
+				<tr>
+					<td>Temp:</td>
+					<td><obs conceptId="5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>RR:</td>
+					<td><obs conceptId="5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>HR:</td>
+					<td><obs conceptId="5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Systolic blood pressure:</td>
+					<td><obs conceptId="5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Diastolic blood pressure:</td>
+					<td><obs conceptId="5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weight:</td>
+					<td><obs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Presenting complains</legend>
+			<table>
+				<tr>
+					<td>Presenting complains</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80"/> </td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>PMTCT Transit Mothers</legend>
+			<table>
+				<tr>
+					<td>Patient Source</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Patient still pregnant?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>If Yes LMP?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>EDD?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Gestation (Wks):</td>
+					<td><obs conceptId="164438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Already Delivered?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weeks Postpartum:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Mode of Delivery:</td>
+					<td><obs conceptId="159775AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Is PMTCT reason for CS:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Place of ANC Service:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Specify ANC follow up facility:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Partner HIV Status, Is Couple Discordant?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>If male partner is HIV (pos) referred to?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>HIV or OI History</legend>
+			<table>
+				<tr>
+					<td>HIV Status known prior to this admission</td>
+					<td><obs conceptId="159423AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>HIV Clinic enrolled to:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Duration in care:</td>
+					<td><obs conceptId="162603AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date of HIV diagnosis:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Age at diagnosis in months:</td>
+					<td><obs conceptId="164438AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Antibody test result (Positive or Negative):</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>PCR result (Positive, Negative or Pending):</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>WHO stage:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Tanner Staging:</td>
+					<td><obs conceptId="5311AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Menarche?:</td>
+					<td><obs conceptId="161557AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Menarche Date:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Additional notes on OI history/management:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="70" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>ART History></legend>
+			<table>
+				<tr>
+					<td>Facility where HAART is started:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Current ART regimen line:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Indicate regimen:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date started 1st line:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date stopped 1st line:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date started 2nd line:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Date stopped 2nd line:</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>ARV Side Effects</legend>
+			<table>
+				<tr>
+					<td>ARV Side effects</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>If yes indicate the side effect</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Pre-existing (Known conditions)</legend>
+			<table>
+				<tr>
+					<td>Pre-existing known conditions</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>TB Evaluation</legend>
+			<table>
+				<tr>
+					<td>Known case of TB</td>
+					<td><obs conceptId="1496AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Date of TB diagnosis</td>
+					<td><obs conceptId="159948AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Current TB regimen</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Facility of drug collection</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>TB card verified</td>
+					<td><obs conceptId="cddbf6fe-4bcd-40b6-a7ea-8573e4080192" /> </td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Drug allergies Toxicities</legend>
+			<table>
+				<tr>
+					<td>Drug allergies/Toxicities</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Other (Specify)</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Physical Exam</legend>
+			<table>
+				<tr>
+					<td>Physical Exam</td>
+					<td><obs conceptId="1391AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Available results</legend>
+			<table>
+				<tr>
+					<td>Current CD4 results (c/mm3)</td>
+					<td><obs conceptId="5497AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Current CD4 date</td>
+					<td><obs conceptId="160103AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Latest Viral load result</td>
+					<td><obs conceptId="163545AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /> </td>
+				</tr>
+				<tr>
+					<td>Latest Viral load date</td>
+					<td><obs conceptId="68bfa3f3-1fc7-4d9d-bb41-e897c3c430ef" /> </td>
+				</tr>
+				<tr>
+					<td>Other investigation results</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="70"/> </td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Diagnosis and current illness at this admission</legend>
+			<table>
+				<tr>
+					<td>HIV related illness (Indicate OI)</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Non HIV related illness</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Treatment</legend>
+			<table>
+				<tr>
+					<td>Treatment</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Eligible through</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>No of drugs substituted</td>
+					<td><obs conceptId="5557AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>ART change code</td>
+					<td><obs conceptId="160562AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Reason for switch to 2nd line regimen</td>
+					<td><obs conceptId="160568AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>ART stop code</td>
+					<td><obs conceptId="1252AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>OI Prophylaxis</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Cotrimoxazole prescribed for</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Others (Specify)</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Other treatment</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Outcome</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Specify other clinic</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Appointment date to CCC</td>
+					<td><obs conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+
+	</div>
+
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>

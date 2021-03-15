@@ -25,7 +25,7 @@ import javax.persistence.Table;
  * Please note that a corresponding table schema must be created in liquibase.xml.
  */
 //Uncomment 2 lines below if you want to make the Item class persistable, see also KnhDaoTest and liquibase.xml
-//@Entity(name = "knh.Item")
+//@Entity(name = "appointments.Item")
 //@Table(name = "knh_item")
 public class Item extends BaseOpenmrsData {
 	
