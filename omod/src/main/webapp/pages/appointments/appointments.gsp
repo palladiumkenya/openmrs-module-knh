@@ -15,7 +15,7 @@
 				</td>
 				<td width="55%" valign="top" style="padding-left: 5px">
 					${ ui.includeFragment("kenyaemr", "visitMenu", [ patient: currentPatient, visit: activeVisit ]) }
-					${ ui.includeFragment("kenyaemr", "appointmentRescheduling/counsellingHistory", [ patient: currentPatient]) }
+					${ ui.includeFragment("knh", "appointmentRescheduling/appointmentsHistory", [ patient: currentPatient]) }
 
 					<% if (activeVisit) { %>
 					${ ui.includeFragment("kenyaemr", "visitAvailableForms", [ visit: activeVisit ]) }
