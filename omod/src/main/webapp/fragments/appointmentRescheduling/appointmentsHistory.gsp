@@ -64,46 +64,26 @@
     jQuery(function () {
 
         jQuery('#update-tca-button').appendTo(jQuery('#update-tca-button-placeholder'));
-        jQuery('#edit-patient-form .cancel-button').click(function () {
-            ui.navigate('${ config.returnUrl }');
-        });
-        kenyaui.setupAjaxPost('edit-patient-form', {
-            onSuccess: function (data) {
-                if (data.id) {
-                    <% if (config.returnUrl) { %>
-                    ui.navigate('${ config.returnUrl }');
-                    <% } else { %>
-                    ui.navigate('kenyaemr', 'registration/registrationViewPatient', {patientId: data.id});
-                    <% } %>
-                } else {
-                    kenyaui.notifyError('Saving patient was successful, but unexpected response');
-                }
-            }
-        });
 
     }); // end of jQuery initialization block
-    function updateNextAppointmentDate(data) {
-        var birthdate = new Date(data.birthdate);
-        kenyaui.setDateField('patient-birthdate', birthdate);
-        kenyaui.setRadioField('patient-birthdate-estimated', 'true');
-    }
 
-</script>
+ </script>
 
 <!-- You can't nest forms in HTML, so keep the dialog box form down here -->
 ${ui.includeFragment("kenyaui", "widget/dialogForm", [
         buttonConfig     : [id: "update-tca-button", label: "Update", iconProvider: "kenyaui", icon: "glyphs/calculate.png"],
         dialogConfig     : [heading: "Update Next Appointment Date", width: 40, height: 40],
         fields           : [
-                [
+                      [
+
                         label: "Next Appointment Date", formFieldName: "tcaDate",
                         class: java.util.Date, initialValue: new java.text.SimpleDateFormat("yyyy-MM-dd").parse((new Date().getYear() + 1900) + "-06-15")
-                ]
+                      ]
         ],
         fragmentProvider : "knh",
         fragment         : "knhUtils",
         action           : "updateTCADate",
-        onSuccessCallback: "updateNextAppointmentDate(data);",
+        onSuccessCallback: "ui.reloadPage()",
         onOpenCallback   : """jQuery('input[name="tcaDate"]').focus()""",
         submitLabel      : ui.message("general.submit"),
         cancelLabel      : ui.message("general.cancel")

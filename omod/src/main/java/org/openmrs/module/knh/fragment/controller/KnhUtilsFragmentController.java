@@ -92,8 +92,7 @@ public class KnhUtilsFragmentController {
 	 * @param patient tca to be updated
 	 */
 	public SimpleObject updateTCADate(@RequestParam("patientId") Patient patient,
-									  @RequestParam("tcaDate") Date tcaDate,
-									  @SpringBean KenyaUiUtils kenyaui) {
+									  @RequestParam("tcaDate") Date tcaDate) {
 		
 		// check last hiv Greencard encounter
 		PatientWrapper patientWrapper = new PatientWrapper(patient);
