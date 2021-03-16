@@ -54,12 +54,12 @@ public class AppointmentsHistoryFragmentController {
 		
 		// get hiv greencard list of observations
 		List<SimpleObject> encDetails = new ArrayList<SimpleObject>();
+		//List<SimpleObject> encDetails = new ArrayList<SimpleObject>();
 		if (lastHivGreenCard != null) {
 			SimpleObject o = getEncDetails(lastHivGreenCard.getObs(), lastHivGreenCard);
 			encDetails.add(o);
-			model.put("encounters", encDetails);
 		}
-		
+		model.put("encounters", encDetails);
 	}
 	
 	/**
