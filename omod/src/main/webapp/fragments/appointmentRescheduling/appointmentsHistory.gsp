@@ -1,4 +1,5 @@
 <%
+    ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
     ui.decorateWith("kenyaui", "panel", [ heading: "Hiv Greencard History" ])
 
     def onEncounterClick = { encounter ->
@@ -74,8 +75,8 @@ ${ui.includeFragment("kenyaui", "widget/dialogForm", [
         buttonConfig     : [id: "update-tca-button", label: "Update", iconProvider: "kenyaui", icon: "glyphs/calculate.png"],
         dialogConfig     : [heading: "Update Next Appointment Date", width: 40, height: 40],
         fields           : [
+                      [ hiddenInputName: "patientId", value: currentPatient.id ],
                       [
-
                         label: "Next Appointment Date", formFieldName: "tcaDate",
                         class: java.util.Date, initialValue: new java.text.SimpleDateFormat("yyyy-MM-dd").parse((new Date().getYear() + 1900) + "-06-15")
                       ]
