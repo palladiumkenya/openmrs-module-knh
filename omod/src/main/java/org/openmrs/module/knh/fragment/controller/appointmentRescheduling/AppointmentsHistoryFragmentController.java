@@ -80,9 +80,8 @@ public class AppointmentsHistoryFragmentController {
 				tcaDateString = tcaDate != null ? DATE_FORMAT.format(tcaDate) : "";
 			}
 		}
-		return SimpleObject.create("encDate", DATE_FORMAT.format(e.getEncounterDatetime()),
-				"tcaDate", tcaDateString != null ? tcaDateString : "", "encounter", Arrays.asList(e),
-				"form", e.getForm(),
-				"patientId", e.getPatient().getPatientId());
+		return SimpleObject.create("encDate", DATE_FORMAT.format(e.getEncounterDatetime()), "tcaDate",
+		    tcaDateString != null ? tcaDateString : "", "encounter", Arrays.asList(e), "form", e.getForm(), "patientId", e
+		            .getPatient().getPatientId());
 	}
 }

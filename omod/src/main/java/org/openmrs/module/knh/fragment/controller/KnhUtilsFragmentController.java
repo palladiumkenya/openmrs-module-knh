@@ -91,8 +91,7 @@ public class KnhUtilsFragmentController {
 	 * 
 	 * @param patient tca to be updated
 	 */
-	public SimpleObject updateTCADate(@RequestParam("patientId") Patient patient,
-									  @RequestParam("tcaDate") Date tcaDate) {
+	public SimpleObject updateTCADate(@RequestParam("patientId") Patient patient, @RequestParam("tcaDate") Date tcaDate) {
 		
 		// check last hiv Greencard encounter
 		PatientWrapper patientWrapper = new PatientWrapper(patient);
@@ -107,11 +106,13 @@ public class KnhUtilsFragmentController {
 			allObs = lastHivGreenCard.getAllObs();
 			for (Obs obs : allObs) {
 				if (obs.getConcept().equals(RETURN_VISIT_DATE)) {
-					obsService.voidObs(obs, "KenyaEMR Updating Patient TCA"); //Voiding the old TCA Date
+					obsService.voidObs(obs, "KenyaEMR Voiding Patient TCA"); //Voiding the old TCA Date
 					
 					Obs o = new Obs();
 					o.setConcept(Context.getConceptService().getConceptByUuid(Dictionary.RETURN_VISIT_DATE)); // Updating the new TCA Date
 					o.setValueDatetime(tcaDate);
+					//obsService.saveObs(obs, "KenyaEMR Updating Patient TCA");
+					lastHivGreenCard.addObs(o);
 				}
 			}
 		}
