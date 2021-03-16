@@ -80,7 +80,7 @@ public class MissedAppointmentWithTraigeCohortDefinitionEvaluator implements Coh
 		        + "(timestampdiff(DAY,date(latest_tca),date(curdate())) >=1)\n"
 		        + "and ((date(d.effective_disc_date) > date(curdate()) or date(enroll_date) > date(d.effective_disc_date)) or d.effective_disc_date is null)\n"
 		        + "and (date(latest_vis_date) > date(date_discontinued) and date(latest_tca) > date(date_discontinued) or disc_patient is null)\n"
-		        + "and date(latest_triage_date) > date(latest_tca)\n" + ")\n" + ") t;";
+		        + "and (timestampdiff(DAY,date(latest_vis_date),date(latest_triage_date)) >=1)\n" + ") ) t;";
 		
 		SqlQueryBuilder builder = new SqlQueryBuilder();
 		builder.append(qry);
