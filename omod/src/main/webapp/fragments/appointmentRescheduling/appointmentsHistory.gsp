@@ -37,7 +37,6 @@
         <legend>HIV GreenCard History</legend>
         <%if (encounters) { %>
         <table class="simple-table">
-
             <tr>
                 <th align="left" width="15%">Last Encounter Date</th>
                 <th align="left" width="15%">Next Appointment Date</th>

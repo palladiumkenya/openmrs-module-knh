@@ -17,9 +17,6 @@
 					${ ui.includeFragment("kenyaemr", "visitMenu", [ patient: currentPatient, visit: activeVisit ]) }
 					${ ui.includeFragment("knh", "appointmentRescheduling/appointmentsHistory", [ patient: currentPatient]) }
 
-					<% if (activeVisit) { %>
-					${ ui.includeFragment("kenyaemr", "visitAvailableForms", [ visit: activeVisit ]) }
-					<% } %>
 				</td>
 				<td width="15%" valign="top" style="padding-left: 5px">
 					${ ui.includeFragment("kenyaemr", "providerAction/providerActions") }
