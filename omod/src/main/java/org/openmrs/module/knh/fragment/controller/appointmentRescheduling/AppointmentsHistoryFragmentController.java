@@ -9,14 +9,19 @@
  */
 package org.openmrs.module.knh.fragment.controller.appointmentRescheduling;
 
+import org.joda.time.Days;
+import org.joda.time.LocalDate;
 import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
 import org.openmrs.Form;
 import org.openmrs.Obs;
 import org.openmrs.Patient;
+import org.openmrs.Visit;
 import org.openmrs.api.ConceptService;
 import org.openmrs.api.EncounterService;
 import org.openmrs.api.FormService;
+import org.openmrs.api.PatientService;
+import org.openmrs.api.VisitService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.kenyaemr.metadata.CommonMetadata;
 import org.openmrs.module.kenyaemr.metadata.HivMetadata;
@@ -60,7 +65,7 @@ public class AppointmentsHistoryFragmentController {
 		if (hivClinicalEncounters != null) {
 			for (int i = 0; i < hivClinicalEncounters.size(); i++) {
 				Encounter enc = hivClinicalEncounters.get(i);
-				SimpleObject o = getEncDetails(enc.getObs(), enc);
+				SimpleObject o = getEncDetails(enc.getObs(), enc, hivClinicalEncounters);
 				encDetails.add(o);
 				if (i == 9) {
 					break;
@@ -76,20 +81,40 @@ public class AppointmentsHistoryFragmentController {
 	 * @param
 	 * @return
 	 */
-	SimpleObject getEncDetails(Set<Obs> obsList, Encounter e) {
+	SimpleObject getEncDetails(Set<Obs> obsList, Encounter e, List<Encounter> allClinicalEncounters) {
 		
 		Integer tcaDateConcept = 5096;
 		String tcaDateString = null;
 		Date tcaDate = null;
+		int appointmentDuration = 0;
+		String appointmentHonoured = "";
 		for (Obs obs : obsList) {
 			
 			if (obs.getConcept().getConceptId().equals(tcaDateConcept)) {
 				tcaDate = obs.getValueDate();
 				tcaDateString = tcaDate != null ? DATE_FORMAT.format(tcaDate) : "";
+				appointmentDuration = Days.daysBetween(new LocalDate(e.getEncounterDatetime()), new LocalDate(tcaDate))
+				        .getDays();
+				if (hasVisitOnDate(tcaDate, e.getPatient(), allClinicalEncounters)) {
+					appointmentHonoured = "Yes";
+				}
 			}
 		}
 		return SimpleObject.create("encDate", DATE_FORMAT.format(e.getEncounterDatetime()), "tcaDate",
 		    tcaDateString != null ? tcaDateString : "", "encounter", Arrays.asList(e), "form", e.getForm(), "patientId", e
-		            .getPatient().getPatientId());
+		            .getPatient().getPatientId(), "appointmentPeriod", appointmentDuration, "honoured", appointmentHonoured);
+	}
+	
+	private boolean hasVisitOnDate(Date appointmentDate, Patient patient, List<Encounter> allEncounters) {
+		boolean hasVisitOnDate = false;
+		for (Encounter e : allEncounters) {
+			int sameDay = new LocalDate(e.getEncounterDatetime()).compareTo(new LocalDate(appointmentDate));
+			
+			if (sameDay == 0) {
+				hasVisitOnDate = true;
+				break;
+			}
+		}
+		return hasVisitOnDate;
 	}
 }

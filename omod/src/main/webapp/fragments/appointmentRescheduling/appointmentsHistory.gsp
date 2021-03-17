@@ -39,13 +39,17 @@
         <table class="simple-table">
             <tr>
                 <th align="left" width="15%">Visit Date</th>
-                <th align="left" width="15%">Appointment Date given</th>
+                <th align="left" width="15%">TCA Date given</th>
+                <th align="left" width="15%">Duration (in days)</th>
+                <th align="left" width="15%">TCA honoured?</th>
                 <th align="left" width="15%"></th>
              </tr>
             <% encounters.eachWithIndex {it, index -> %>
             <tr>
                 <td>${it.encDate}</td>
                 <td>${it.tcaDate} </td>
+                <td>${it.appointmentPeriod} </td>
+                <td>${it.honoured} </td>
                 <td> <% if (index == 0) { %> <span id="update-tca-button-placeholder"></span><% } %></td>
 
             </tr>
