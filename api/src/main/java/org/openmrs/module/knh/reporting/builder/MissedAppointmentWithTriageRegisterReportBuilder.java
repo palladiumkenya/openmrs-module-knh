@@ -67,27 +67,8 @@ public class MissedAppointmentWithTriageRegisterReportBuilder extends AbstractHy
 	
 	protected Mapped<CohortDefinition> allPatientsCohort() {
 		CohortDefinition cd = new MissedAppointmentWithTraigeCohortDefinition();
-		cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
-		cd.addParameter(new Parameter("endDate", "End Date", Date.class));
 		cd.setName("Triaged Missed Appoitments");
-		return ReportUtils.map(cd, "startDate=${startDate},endDate=${endDate}");
-	}
-	
-	@Override
-	protected List<Mapped<DataSetDefinition>> buildDataSets(ReportDescriptor descriptor, ReportDefinition report) {
-		
-		PatientDataSetDefinition allPatients = triagedMissedAppoitmentDataSetDefinition();
-		allPatients.addRowFilter(allPatientsCohort());
-		//allPatients.addRowFilter(buildCohort(descriptor));
-		DataSetDefinition allPatientsDSD = allPatients;
-		
-		return Arrays.asList(ReportUtils.map(allPatientsDSD, "startDate=${startDate},endDate=${endDate}"));
-	}
-	
-	@Override
-	protected List<Parameter> getParameters(ReportDescriptor reportDescriptor) {
-		return Arrays.asList(new Parameter("startDate", "Start Date", Date.class), new Parameter("endDate", "End Date",
-		        Date.class), new Parameter("dateBasedReporting", "", String.class));
+		return ReportUtils.map(cd, "");
 	}
 	
 	protected PatientDataSetDefinition triagedMissedAppoitmentDataSetDefinition() {

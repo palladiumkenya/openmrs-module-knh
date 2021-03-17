@@ -57,7 +57,8 @@ public class MissedAppointmentWithTraigeCohortDefinitionEvaluator implements Coh
 		        + "select fup.visit_date,fup.patient_id, max(e.visit_date) as enroll_date,\n"
 		        + "greatest(max(e.visit_date), ifnull(max(date(e.transfer_in_date)),'0000-00-00')) as latest_enrolment_date,\n"
 		        + "greatest(max(fup.visit_date), ifnull(max(d.visit_date),'0000-00-00')) as latest_vis_date,\n"
-		        + "greatest(max(tr.visit_date), ifnull(max(tr.visit_date),'0000-00-00')) as latest_triage_date,\n"
+		        + "max(tr.visit_date) as latest_triage_date,\n"
+		        + "(select  max(fp.visit_date) from  kenyaemr_etl.etl_patient_hiv_followup fp where  fp.patient_id = fup.patient_id and fp.encounter_id not in (select tg.encounter_id from kenyaemr_etl.etl_patient_triage tg)) as latest_followup_date,\n"
 		        + "greatest(mid(max(concat(fup.visit_date,fup.next_appointment_date)),11), ifnull(max(d.visit_date),'0000-00-00')) as latest_tca,\n"
 		        + "d.patient_id as disc_patient,\n"
 		        + "d.effective_disc_date as effective_disc_date,\n"
@@ -80,7 +81,7 @@ public class MissedAppointmentWithTraigeCohortDefinitionEvaluator implements Coh
 		        + "(timestampdiff(DAY,date(latest_tca),date(curdate())) >=1)\n"
 		        + "and ((date(d.effective_disc_date) > date(curdate()) or date(enroll_date) > date(d.effective_disc_date)) or d.effective_disc_date is null)\n"
 		        + "and (date(latest_vis_date) > date(date_discontinued) and date(latest_tca) > date(date_discontinued) or disc_patient is null)\n"
-		        + "and (timestampdiff(DAY,date(latest_vis_date),date(latest_triage_date)) >=1)\n" + ") ) t;";
+		        + "and (timestampdiff(DAY,date(latest_followup_date),date(latest_triage_date)) >=1)\n" + ") ) t;";
 		
 		SqlQueryBuilder builder = new SqlQueryBuilder();
 		builder.append(qry);
