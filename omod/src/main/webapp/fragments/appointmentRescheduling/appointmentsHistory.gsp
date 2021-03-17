@@ -1,6 +1,6 @@
 <%
     ui.decorateWith("kenyaemr", "standardPage", [ patient: currentPatient, layout: "sidebar" ])
-    ui.decorateWith("kenyaui", "panel", [ heading: "Hiv Greencard History" ])
+    ui.decorateWith("kenyaui", "panel", [ heading: "HIV Clinical Appointment History" ])
 
     def onEncounterClick = { encounter ->
         """kenyaemr.openEncounterDialog('${currentApp.id}', ${encounter.id});"""
@@ -12,7 +12,7 @@
     border: solid 1px #DDEEEE;
     border-collapse: collapse;
     border-spacing: 0;
-    font: normal 13px Arial, sans-serif;
+    font: normal 15px Arial, sans-serif;
 }
 .simple-table thead th {
     background-color: #DDEFEF;
@@ -34,19 +34,19 @@
 <div>
 
     <fieldset>
-        <legend>HIV GreenCard History</legend>
+        <legend>Latest appointments</legend>
         <%if (encounters) { %>
         <table class="simple-table">
             <tr>
-                <th align="left" width="15%">Last Encounter Date</th>
-                <th align="left" width="15%">Next Appointment Date</th>
-                <th align="left" width="15%">Update Next Appointment Date</th>
+                <th align="left" width="15%">Visit Date</th>
+                <th align="left" width="15%">Appointment Date given</th>
+                <th align="left" width="15%"></th>
              </tr>
-            <% encounters.each { %>
+            <% encounters.eachWithIndex {it, index -> %>
             <tr>
                 <td>${it.encDate}</td>
                 <td>${it.tcaDate} </td>
-                <td> <span id="update-tca-button-placeholder"></span></td>
+                <td> <% if (index == 0) { %> <span id="update-tca-button-placeholder"></span><% } %></td>
 
             </tr>
             <% } %>
@@ -71,13 +71,13 @@
 
 <!-- You can't nest forms in HTML, so keep the dialog box form down here -->
 ${ui.includeFragment("kenyaui", "widget/dialogForm", [
-        buttonConfig     : [id: "update-tca-button", label: "Update", iconProvider: "kenyaui", icon: "glyphs/calculate.png"],
-        dialogConfig     : [heading: "Update Next Appointment Date", width: 40, height: 40],
+        buttonConfig     : [id: "update-tca-button", label: "Update last appointment", iconProvider: "kenyaui", icon: "glyphs/calculate.png"],
+        dialogConfig     : [heading: "Update Appointment Date", width: 40, height: 40],
         fields           : [
                       [ hiddenInputName: "patientId", value: currentPatient.id ],
                       [
-                        label: "Next Appointment Date", formFieldName: "tcaDate",
-                        class: java.util.Date, initialValue: new java.text.SimpleDateFormat("yyyy-MM-dd").parse((new Date().getYear() + 1900) + "-06-15")
+                        label: "Appointment Date", formFieldName: "tcaDate",
+                        class: java.util.Date, initialValue: new Date()
                       ]
         ],
         fragmentProvider : "knh",

@@ -50,14 +50,22 @@ public class AppointmentsHistoryFragmentController {
 		PatientWrapper patientWrapper = new PatientWrapper(patient);
 		EncounterService encounterService = Context.getEncounterService();
 		EncounterType et = encounterService.getEncounterTypeByUuid(HivMetadata._EncounterType.HIV_CONSULTATION);
-		Encounter lastHivGreenCard = patientWrapper.lastEncounter(et);
+		
+		List<Encounter> hivClinicalEncounters = patientWrapper.allEncounters(et);
+		Collections.reverse(hivClinicalEncounters);
 		
 		// get hiv greencard list of observations
 		List<SimpleObject> encDetails = new ArrayList<SimpleObject>();
 		//List<SimpleObject> encDetails = new ArrayList<SimpleObject>();
-		if (lastHivGreenCard != null) {
-			SimpleObject o = getEncDetails(lastHivGreenCard.getObs(), lastHivGreenCard);
-			encDetails.add(o);
+		if (hivClinicalEncounters != null) {
+			for (int i = 0; i < hivClinicalEncounters.size(); i++) {
+				Encounter enc = hivClinicalEncounters.get(i);
+				SimpleObject o = getEncDetails(enc.getObs(), enc);
+				encDetails.add(o);
+				if (i == 9) {
+					break;
+				}
+			}
 		}
 		model.put("encounters", encDetails);
 	}
