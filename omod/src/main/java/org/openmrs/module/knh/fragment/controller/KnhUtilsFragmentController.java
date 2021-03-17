@@ -106,7 +106,7 @@ public class KnhUtilsFragmentController {
 			allObs = lastHivGreenCard.getAllObs();
 			for (Obs obs : allObs) {
 				if (obs.getConcept().equals(RETURN_VISIT_DATE)) {
-					obsService.voidObs(obs, "KenyaEMR Voiding Patient TCA"); //Voiding the old TCA Date
+					obsService.voidObs(obs, "Voiding TCA for a new one"); //Voiding the old TCA Date
 					
 					Obs o = new Obs();
 					o.setConcept(Context.getConceptService().getConceptByUuid(Dictionary.RETURN_VISIT_DATE)); // Updating the new TCA Date
@@ -116,7 +116,7 @@ public class KnhUtilsFragmentController {
 				}
 			}
 		}
-		assignToVisit(lastHivGreenCard, Context.getVisitService().getVisitTypeByUuid(CommonMetadata._VisitType.OUTPATIENT));
+
 		try {
 			encounterService.saveEncounter(lastHivGreenCard);
 			return SimpleObject.create("status", "Success", "message", "TCA for Patient updated successfully");
