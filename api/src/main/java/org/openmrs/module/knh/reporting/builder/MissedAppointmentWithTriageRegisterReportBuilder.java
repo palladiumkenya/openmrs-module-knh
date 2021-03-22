@@ -85,7 +85,7 @@ public class MissedAppointmentWithTriageRegisterReportBuilder extends AbstractHy
 	protected PatientDataSetDefinition triagedMissedAppoitmentDataSetDefinition() {
 		PatientDataSetDefinition dsd = new PatientDataSetDefinition("TriagedMissedAppoitment");
 		PatientIdentifierType upn = MetadataUtils.existing(PatientIdentifierType.class,
-	    HivMetadata._PatientIdentifierType.UNIQUE_PATIENT_NUMBER);
+		    HivMetadata._PatientIdentifierType.UNIQUE_PATIENT_NUMBER);
 		DataConverter identifierFormatter = new ObjectFormatter("{identifier}");
 		DataDefinition identifierDef = new ConvertedPatientDataDefinition("identifier", new PatientIdentifierDataDefinition(
 		        upn.getName(), upn), identifierFormatter);
