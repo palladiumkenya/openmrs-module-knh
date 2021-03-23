@@ -71,11 +71,19 @@ public class MissedAppointmentWithTriageRegisterReportBuilder extends AbstractHy
 		return ReportUtils.map(cd, "");
 	}
 	
+	@Override
+	protected List<Mapped<DataSetDefinition>> buildDataSets(ReportDescriptor descriptor, ReportDefinition report) {
+		
+		PatientDataSetDefinition allPatients = triagedMissedAppoitmentDataSetDefinition();
+		allPatients.addRowFilter(allPatientsCohort());
+		//allPatients.addRowFilter(buildCohort(descriptor));
+		DataSetDefinition allPatientsDSD = allPatients;
+		
+		return Arrays.asList(ReportUtils.map(allPatientsDSD, ""));
+	}
+	
 	protected PatientDataSetDefinition triagedMissedAppoitmentDataSetDefinition() {
 		PatientDataSetDefinition dsd = new PatientDataSetDefinition("TriagedMissedAppoitment");
-		dsd.addParameter(new Parameter("startDate", "Start Date", Date.class));
-		dsd.addParameter(new Parameter("endDate", "End Date", Date.class));
-		
 		PatientIdentifierType upn = MetadataUtils.existing(PatientIdentifierType.class,
 		    HivMetadata._PatientIdentifierType.UNIQUE_PATIENT_NUMBER);
 		DataConverter identifierFormatter = new ObjectFormatter("{identifier}");

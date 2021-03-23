@@ -85,10 +85,6 @@ public class MissedAppointmentWithTraigeCohortDefinitionEvaluator implements Coh
 		
 		SqlQueryBuilder builder = new SqlQueryBuilder();
 		builder.append(qry);
-		Date startDate = (Date) context.getParameterValue("startDate");
-		Date endDate = (Date) context.getParameterValue("endDate");
-		builder.addParameter("endDate", endDate);
-		builder.addParameter("startDate", startDate);
 		
 		List<Integer> ptIds = evaluationService.evaluateToList(builder, Integer.class, context);
 		newCohort.setMemberIds(new HashSet<Integer>(ptIds));
