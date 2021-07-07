@@ -46,7 +46,7 @@
 		<legacyUiVersion>1.5.0</legacyUiVersion>
 		<kenyacoreVersion>2.4.2</kenyacoreVersion>
 		<kenyauiVersion>2.1.2</kenyauiVersion>
-		<kenyaemrVersion>17.2.0</kenyaemrVersion>
+		<kenyaemrVersion>17.4.0</kenyaemrVersion>
 		<jodaTimeVersion>2.9.1</jodaTimeVersion>
 		<webservices.restVersion>2.26.0</webservices.restVersion>
 		<logicVersion>0.5.2</logicVersion>
