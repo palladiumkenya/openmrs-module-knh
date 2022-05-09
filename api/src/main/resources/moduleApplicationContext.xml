@@ -109,6 +109,24 @@
         </property>
     </bean>
 
+    <bean id="knh.config.report" class="org.openmrs.module.kenyacore.report.ReportConfiguration">
+        <property name="commonReports">
+            <set>
+                <ref bean="kenyaemr.etl.common.report.missedAppointmentWithTriage"/>
+             </set>
+        </property>
+    </bean>
+
+    <!-- Apps -->
+
+    <bean id="knh.app.appointments" factory-bean="kenyacore.appFactoryBean" factory-method="createInstance">
+        <constructor-arg value="knh.appointments" />
+        <constructor-arg value="Appointments" />
+        <constructor-arg value="knh/appointments/home.page" />
+        <constructor-arg value="knh:apps/knh_logo.png" />
+        <constructor-arg value="1000" />
+    </bean>
+
     <!-- ===================== Forms ===================== -->
 
     <!--   inpatient form -->
@@ -127,24 +145,14 @@
     </bean>
 
     <!-- ===================== Reports ===================== -->
-
-    <bean id="knh.config.report" class="org.openmrs.module.kenyacore.report.ReportConfiguration">
-        <property name="commonReports">
-            <set>
-                <ref bean="knh.common.report.weeklysurge"/>
-            </set>
-        </property>
-    </bean>
-
-    <bean id="knh.common.report.weeklysurge" class="org.openmrs.module.kenyacore.report.IndicatorReportDescriptor">
-        <property name="targetUuid" value="b76fd8c5-a721-44ee-8fc4-20eb746c33bc" />
-        <property name="name" value="KNH Weekly LEAP (Surge) Report" />
-        <property name="description" value="A weekly report on LEAP (Surge) indicators" />
+    <bean id="kenyaemr.etl.common.report.missedAppointmentWithTriage" class="org.openmrs.module.kenyacore.report.HybridReportDescriptor">
+        <property name="targetUuid" value="5095b7ac-62f4-4233-af3a-9ba8c926ddaf" />
+        <property name="name" value="Missed Appointments with subsequent Triage" />
+        <property name="description" value="Missed appointment patients with subsequent triage form filled" />
         <property name="apps">
             <set>
                 <ref bean="kenyaemr.app.reports" />
             </set></property>
-        <property name="template" value="kenyaemr:moh731.xls" />
     </bean>
 
 </beans>

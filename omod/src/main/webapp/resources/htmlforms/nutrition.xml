@@ -1,0 +1,191 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Socio Demographic Information</legend>
+			<table>
+				<tr>
+					<td>Patient accompanied by caregiver:</td>
+					<td><obs conceptId="160112AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Caregiver relationship:</td>
+					<td><obs conceptId="160640AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td># of people in the household:</td>
+					<td><obs conceptId="1474AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Pregnant:</td>
+					<td><obs conceptId="5272AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Lactating:</td>
+					<td><obs conceptId="5632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Prior Nutrition Counseling Services</legend>
+			<table>
+				<tr>
+					<td>Ever had nutritional counseling at the CCC:</td>
+					<td><obs conceptId="1380AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Reason for nutritional support:</td>
+					<td><obs conceptId="5484AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Critical nutritional practices (Done today):</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Nutrition Assessment</legend>
+			<table>
+				<tr>
+					<td>Height (cm):</td>
+					<td><obs conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weight (kgs):</td>
+					<td><obs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>BMI:</td>
+					<td><obs conceptId="1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>MUAC (cms):</td>
+					<td><obs conceptId="1343AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Target Weight:</td>
+					<td><obs conceptId="163102AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Adult nutrition assessment:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weight for age:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weight for height:</td>
+					<td><obs conceptId="163515AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Height for age:</td>
+					<td><obs conceptId="164088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Infant feeding practice:</td>
+					<td><obs conceptId="1151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Nutrition Diagnosis</legend>
+			<table>
+				<tr>
+					<td>Food intake in the last 24 hours:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Number of meals per day:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Number of snacks per day:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Specify food allergies affecting patient:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>What problems are you experiencing?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Prescribed Nutritional Support</legend>
+			<table>
+				<tr>
+					<td>Type of diet recommended:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Vitamin A issued:</td>
+					<td><obs conceptId="161534AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Additional nutritional notes:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" id="nutrition-notes"/></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Referral</legend>
+			<table>
+				<tr>
+					<td>Patient Referred?:</td>
+					<td><obs conceptId="1788AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Referred to:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>TCA date:</td>
+					<td><obs conceptId="5096AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Appointment reason:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+		<fieldset>
+			<legend>Nutritional Supplements</legend>
+			<table>
+				<tr>
+					<td>Nutritional supplements given:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" id="supplements-given" /></td>
+				</tr>
+				<tr>
+					<td>Adherence to FBP:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" id="adherence" /></td>
+				</tr>
+				<tr>
+					<td>Support Outcomes:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" id="support-outcomes" /></td>
+				</tr>
+			</table>
+		</fieldset>
+	</div>
+
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>

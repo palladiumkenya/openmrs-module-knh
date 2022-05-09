@@ -1,0 +1,55 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Referral Details</legend>
+			<table>
+				<tr>
+					<td>Facility Referred To:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- REFERRAL CENTER -->
+				</tr>
+				<tr>
+					<td>Date referred:</td>
+					<td><obs conceptId="163181AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Referral within the CCC:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Referral within the facility:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Special Referral:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Reason for Referral:</td>
+					<td><obs conceptId="164359AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80" /></td>
+				</tr>
+			</table>
+		</fieldset>
+
+	</div>
+
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>

@@ -1,0 +1,245 @@
+<htmlform>
+
+	<script type="text/javascript">
+		// Add javascript here
+	</script>
+
+	<div class="ke-form-header">
+		<table width="100%">
+			<tr>
+				<td>Date <encounterDate id="encounter-date" showTime="true"/></td>
+				<td>Provider <encounterProvider default="currentUser" /></td>
+				<td>Location <encounterLocation default="GlobalProperty:kenyaemr.defaultLocation" /></td>
+			</tr>
+		</table>
+	</div>
+
+	<div class="ke-form-content">
+		<fieldset>
+			<legend>Client Information</legend>
+			<table>
+				<tr>
+					<td>Patient Accompanied by caregiver?:</td>
+					<td><obs conceptId="160112AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- Accompanist?	-->
+				</tr>
+				<tr>
+					<td>Caregiver relationship:</td>
+					<td><obs conceptId="969AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- FAMILY MEMBER ACCOMPANYING PATIENT	-->
+				</tr>
+				<tr>
+					<td>Have you been referred from another facility?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- PATIENT REFERRED	-->
+				</tr>
+				<tr>
+					<td>If yes, specify:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!--  Type of facility referred from	-->
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Vitals</legend>
+			<table>
+				<tr>
+					<td>Temperature(C):</td>
+					<td><obs conceptId="5088AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>RR(bpm):</td>
+					<td><obs conceptId="5242AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>HR(bpm):</td>
+					<td><obs conceptId="5087AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>BP(Diastolic):</td>
+					<td><obs conceptId="5086AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>BP(Systolic):</td>
+					<td><obs conceptId="5085AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Height(CM):</td>
+					<td><obs conceptId="5090AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Weight(kg):</td>
+					<td><obs conceptId="5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>BMI:</td>
+					<td><obs conceptId="1342AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Nurse comments:</td>
+					<td><obs conceptId="159395AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!--  Clinical impression comment	-->
+				</tr>
+				<tr>
+					<td>Patient referred to:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!--  Type of facility referred to	-->
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Pre-Existing Known Conditions</legend>
+			<table>
+				<tr>
+					<td>From exposure, time taken to access 1st dose:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Medical conditions:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Pre existing conditions additional notes:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Past medical record:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- PAST MEDICAL HISTORY ADDED	-->
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Reason for PEP</legend>
+			<table>
+				<tr>
+					<td>Occupational:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Body fluid involved:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Non-occupational :</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Sexual assault:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- Sexual assault	-->
+				</tr>
+				<tr>
+					<td>Action taken after exposure:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- Action taken	-->
+				</tr>
+				<tr>
+					<td>PEP regimen:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- POST-EXPOSURE PROPHYLAXIS	-->
+				</tr>
+				<tr>
+					<td>Current PEP regimen start date:</td>
+					<td><obs conceptId="164361AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Days PEP dispensed so far:</td>
+					<td><obs conceptId="d85918e3-11ba-43df-986e-2107d7e6b500" /></td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Adherence</legend>
+			<table>
+				<tr>
+					<td>Have you missed any doses?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Have you vomited any doses?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Have you delayed in any dose?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Client and Source Patient Status</legend>
+			<table>
+				<tr>
+					<td>HIV status for client?</td>
+					<td><obs conceptId="1169AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Hepatitis B status for client?:</td>
+					<td><obs conceptId="1322AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- HEPATITIS B TEST - QUALITATIVE	-->
+				</tr>
+				<tr>
+					<td>Hepatitis C status for client:</td>
+					<td><obs conceptId="1325AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- HEPATITIS C TEST - QUALITATIVE	-->
+				</tr>
+				<tr>
+					<td>Has client completed HBV vaccination?:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- COMPLETED	-->
+				</tr>
+				<tr>
+					<td>Discussed safe sex practices:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Condoms dispensed?:</td>
+					<td><obs conceptId="159777AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- Number of male condoms given	-->
+				</tr>
+				<tr>
+					<td>Source HIV status :</td>
+					<td><obs conceptId="164844AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+					<!-- HIV status of source person	-->
+				</tr>
+				<tr>
+					<td>Source hepatitis B status:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Source hepatitis C status:</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Discussed disclosure plan :</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" /></td>
+				</tr>
+				<tr>
+					<td>Adherence/supportive counselling :</td>
+					<td><obs conceptId="bfe0cbb2-eea0-4431-a5c5-d0f49a4ed21b" /></td>
+					<!-- Counselling Provided	-->
+				</tr>
+			</table>
+		</fieldset>
+
+		<fieldset>
+			<legend>Notes</legend>
+			<table>
+				<tr>
+					<td>Notes?</td>
+					<td><obs conceptId="160632AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" rows="3" cols="80"/></td>
+				</tr>
+			</table>
+		</fieldset>
+	</div>
+
+	<div class="ke-form-footer">
+		<submit />
+	</div>
+
+</htmlform>
