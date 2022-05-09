@@ -98,25 +98,23 @@ public class KnhUtilsFragmentController {
 		EncounterService encounterService = Context.getEncounterService();
 		ObsService obsService = Context.getObsService();
 		EncounterType et = encounterService.getEncounterTypeByUuid(HivMetadata._EncounterType.HIV_CONSULTATION);
-		Encounter lastHivGreenCard = patientWrapper.lastEncounter(et);
+		Encounter lastHivGreenCardEnc = patientWrapper.lastEncounter(et);
 		Concept RETURN_VISIT_DATE = Dictionary.getConcept(Dictionary.RETURN_VISIT_DATE);
 		
-		if (lastHivGreenCard != null) {
-			Set<Obs> allObs;
-			allObs = lastHivGreenCard.getAllObs();
-			for (Obs obs : allObs) {
+		if (lastHivGreenCardEnc != null) {
+			for (Obs obs : lastHivGreenCardEnc.getAllObs()) {
 				if (obs.getConcept().equals(RETURN_VISIT_DATE)) {
 					obsService.voidObs(obs, "Voiding TCA for a new one"); //Voiding the old TCA Date
 					Obs o = new Obs();
 					o.setConcept(Context.getConceptService().getConceptByUuid(Dictionary.RETURN_VISIT_DATE)); // Updating the new TCA Date
 					o.setValueDatetime(tcaDate);
-					lastHivGreenCard.addObs(o);
+					lastHivGreenCardEnc.addObs(o);
 				}
 			}
 		}
 		
 		try {
-			encounterService.saveEncounter(lastHivGreenCard);
+			encounterService.saveEncounter(lastHivGreenCardEnc);
 			return SimpleObject.create("status", "Success", "message", "TCA for Patient updated successfully");
 		}
 		catch (Exception e) {
